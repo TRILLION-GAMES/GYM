@@ -1,0 +1,1006 @@
+/* ==========================================================================
+   APP LAYOUT & RESPONSIVE COMPONENT STYLES
+   Pure Black & Solid Light Green (Zero Gradients, Poppins Typography)
+   ========================================================================== */
+
+/* App Root Structure */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-base);
+  position: relative;
+}
+
+/* ==========================================================================
+   1. DESKTOP SIDEBAR (> 1024px)
+   ========================================================================== */
+.desktop-sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-glass);
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+  overflow-y: auto;
+  user-select: none;
+}
+
+.sidebar-header {
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.brand-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+}
+
+.brand-title-group h2 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.brand-title-group span {
+  font-size: 10px;
+  color: var(--primary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.sidebar-nav-container {
+  flex: 1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-group-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  margin-bottom: 4px;
+}
+
+.sidebar-nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.sidebar-nav-link:hover {
+  color: #ffffff;
+  background: #181818;
+}
+
+.sidebar-nav-link.active {
+  color: var(--primary);
+  background: #0d2818;
+  font-weight: 700;
+  border: 1px solid var(--primary-border);
+}
+
+.sidebar-nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  background: var(--primary);
+}
+
+.nav-link-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid var(--border-glass);
+  background: #050505;
+}
+
+.user-profile-widget {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  background: #121212;
+  border: 1px solid var(--border-glass);
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  background: #1a1a1a;
+}
+
+.user-info-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-role-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-light);
+}
+
+/* ==========================================================================
+   2. MAIN CONTENT AREA & DESKTOP TOPBAR
+   ========================================================================== */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+}
+
+.desktop-topbar {
+  height: var(--topbar-height);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-glass);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Role Switcher Pill */
+.role-switcher-container {
+  display: flex;
+  align-items: center;
+  background: #121212;
+  border: 1px solid var(--border-glass);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  gap: 2px;
+}
+
+.role-switcher-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+.role-switcher-btn.active {
+  background: var(--primary);
+  color: #000000;
+  font-weight: 700;
+}
+
+.role-switcher-btn:hover:not(.active) {
+  color: #ffffff;
+}
+
+.topbar-action-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  background: #141414;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.topbar-action-icon:hover {
+  background: #202020;
+  color: #ffffff;
+}
+
+.notif-badge-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+}
+
+.page-content-scroll {
+  flex: 1;
+  padding: 28px 32px 48px;
+  overflow-y: auto;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ==========================================================================
+   3. MOBILE APP BAR (< 768px)
+   ========================================================================== */
+.mobile-app-bar {
+  display: none; /* hidden on desktop */
+  height: var(--mobile-appbar-height);
+  padding: 0 16px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-glass);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-appbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hamburger-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: #181818;
+  border: 1px solid var(--border-glass);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.mobile-brand h2 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.mobile-appbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-avatar-small {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+  border: 2px solid var(--primary);
+  background: #1a1a1a;
+}
+
+/* ==========================================================================
+   4. MOBILE BOTTOM NAVIGATION (< 768px)
+   ========================================================================== */
+.mobile-bottom-nav {
+  display: none; /* hidden on desktop */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--mobile-bottomnav-height);
+  background: #0a0a0a;
+  border-top: 1px solid var(--border-glass);
+  z-index: 50;
+  padding: 0 8px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 100%;
+  color: var(--text-dim);
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.bottom-nav-item:hover {
+  color: #ffffff;
+}
+
+.bottom-nav-item.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.bottom-nav-item.active .nav-icon-container {
+  transform: translateY(-2px);
+  color: var(--primary);
+}
+
+.nav-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.bottom-tab-badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  background: var(--primary);
+  color: #000000;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: var(--radius-pill);
+}
+
+/* ==========================================================================
+   5. MOBILE NAVIGATION DRAWER & "MORE" SHEET
+   ========================================================================== */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 90;
+  animation: fadeIn 0.15s ease;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 82%;
+  max-width: 320px;
+  background: #0a0a0a;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-glass);
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+  overflow-y: auto;
+}
+
+.drawer-header {
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.drawer-role-switch {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-glass);
+  background: #000000;
+}
+
+.drawer-role-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.drawer-role-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.drawer-role-btn {
+  padding: 8px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: #141414;
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+}
+
+.drawer-role-btn.active {
+  background: var(--primary);
+  color: #000000;
+  font-weight: 700;
+  border-color: var(--primary);
+}
+
+.drawer-nav-list {
+  flex: 1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.drawer-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.drawer-nav-link.active {
+  background: #0d2818;
+  color: var(--primary);
+  font-weight: 700;
+  border: 1px solid var(--primary-border);
+}
+
+/* Bottom Sheet Modal for "More" Navigation */
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0d0d0d;
+  border-top-left-radius: var(--radius-xl);
+  border-top-right-radius: var(--radius-xl);
+  border-top: 1px solid var(--border-glass-strong);
+  z-index: 100;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px 18px 40px;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: #333333;
+  margin: 0 auto 16px;
+}
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   6. PAGE HEADER (Requirement 27)
+   ========================================================================== */
+.page-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.page-header-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-button {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  background: #141414;
+  color: var(--text-muted);
+}
+
+.back-button:hover {
+  color: #ffffff;
+  background: #202020;
+}
+
+.page-header-titles h1 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.page-header-titles p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   7. DASHBOARD GRIDS & CARDS
+   ========================================================================== */
+.dashboard-greeting-hero {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.greeting-text h1 {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.greeting-text p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Cards Grid Layouts */
+.widgets-grid-main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-6  { grid-column: span 6; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
+
+/* Home Module Quick-Access Grid (Requirement 15 & 25) */
+.home-modules-section {
+  margin-top: 36px;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-header-row h2 {
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Module Card (Requirement 24) */
+.module-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.module-card:hover {
+  border-color: var(--primary);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.module-card:active {
+  transform: scale(0.98);
+}
+
+.module-card-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: #181818;
+  border: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.module-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.module-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.module-card-footer {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   8. SPECIFIC FITNESS & MANAGEMENT WIDGETS (Solid Colors, Zero Gradients)
+   ========================================================================== */
+
+/* Membership Card (Section 8) */
+.membership-card-featured {
+  background: #121212;
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.progress-track-bg {
+  width: 100%;
+  height: 8px;
+  background: #1e1e1e;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin: 12px 0 8px;
+}
+
+.progress-fill-bar {
+  height: 100%;
+  background: var(--primary);
+  border-radius: var(--radius-pill);
+  transition: width 0.3s ease;
+}
+
+/* Today's Workout Card (Section 9) */
+.workout-today-card {
+  background: #121212;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.workout-stats-chips {
+  display: flex;
+  gap: 12px;
+  margin: 14px 0 20px;
+}
+
+.stat-chip {
+  background: #1a1a1a;
+  border: 1px solid var(--border-glass);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+}
+
+/* Water Tracker Card (Section 11) */
+.water-tracker-card {
+  background: #121212;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+}
+
+.water-amount-huge {
+  font-size: 26px;
+  font-weight: 800;
+  font-family: var(--font-display);
+  color: var(--primary-light);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.water-buttons-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.water-quick-btn {
+  flex: 1;
+  background: #181818;
+  border: 1px solid var(--primary-border);
+  color: var(--primary-light);
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+}
+
+.water-quick-btn:hover {
+  background: var(--primary);
+  color: #000000;
+}
+
+/* KPI Cards (Section 20) */
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kpi-number {
+  font-size: 28px;
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  margin: 6px 0 2px;
+  color: #ffffff;
+}
+
+/* Interactive Workout Session Player (Section 31) */
+.workout-player-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass-strong);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+}
+
+.exercise-player-card {
+  background: #141414;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: all 0.15s ease;
+}
+
+.exercise-player-card.completed {
+  border-color: var(--primary-border);
+  background: #0d2818;
+}
+
+.weight-counter-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #000000;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-glass);
+  margin: 16px 0;
+}
+
+.counter-circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background: #181818;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  border: 1px solid var(--border-glass);
+}
+
+.counter-circle-btn:hover {
+  background: var(--primary);
+  color: #000000;
+}
+
+.weight-display-value {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+/* Rest Timer Box */
+.rest-timer-box {
+  background: #161616;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+.timer-countdown {
+  font-size: 30px;
+  font-weight: 800;
+  font-family: monospace;
+  color: var(--primary);
+}
+
+/* Empty State Helper */
+.empty-state-card {
+  background: #121212;
+  border: 1px dashed var(--border-glass-strong);
+  border-radius: var(--radius-lg);
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.empty-state-card h4 {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.empty-state-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 400px;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE BREAKPOINTS (Requirement 34)
+   ========================================================================== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .desktop-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+  .page-content-scroll {
+    padding: 20px 24px 36px;
+  }
+  .modules-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .col-8 { grid-column: span 12; }
+  .col-4 { grid-column: span 6; }
+  .col-3 { grid-column: span 6; }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+  .desktop-sidebar {
+    display: none !important;
+  }
+  .desktop-topbar {
+    display: none !important;
+  }
+  .mobile-app-bar {
+    display: flex !important;
+  }
+  .mobile-bottom-nav {
+    display: flex !important;
+  }
+  .page-content-scroll {
+    padding: 16px 16px calc(var(--mobile-bottomnav-height) + 24px) !important;
+  }
+  .greeting-text h1 {
+    font-size: 22px;
+  }
+  .widgets-grid-main {
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .col-12, .col-8, .col-6, .col-4, .col-3 {
+    grid-column: span 12;
+  }
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .module-card {
+    padding: 14px;
+    min-height: 120px;
+  }
+  .module-card-icon-wrap {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+  }
+  .module-card h3 {
+    font-size: 14px;
+  }
+  .module-card p {
+    font-size: 11px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,246 @@
+/* ==========================================================================
+   FITZONE ELITE DESIGN SYSTEM (Pure Black & Solid Light Green)
+   Zero Gradients - 100% Poppins Typography
+   ========================================================================== */
+
+:root {
+  /* Color Palette: Pure Black & Solid Light Green */
+  --bg-base: #000000;
+  --bg-surface: #0a0a0a;
+  --bg-card: #121212;
+  --bg-card-hover: #181818;
+  --bg-card-elevated: #1a1a1a;
+  --bg-subtle: #141414;
+  
+  /* Solid Light Green Accents */
+  --primary: #22c55e;
+  --primary-light: #4ade80;
+  --primary-dark: #16a34a;
+  --primary-bg: #0d2818;
+  --primary-border: #1b4d2e;
+
+  /* Typography Colors */
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
+  --text-inverse: #000000;
+
+  /* Solid Borders */
+  --border-glass: #222222;
+  --border-glass-strong: #333333;
+  --border-focus: #22c55e;
+
+  /* Shadows (Clean & Subtle, No Colorful Glows) */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.85);
+
+  /* Geometry & Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-pill: 9999px;
+
+  /* Layout Measurements */
+  --sidebar-width: 270px;
+  --mobile-appbar-height: 64px;
+  --mobile-bottomnav-height: 68px;
+  --topbar-height: 72px;
+
+  /* Universal Poppins Font */
+  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Base Links & Buttons */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: #121212;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+}
+
+/* Clean Solid Panels */
+.glass-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-glass-strong);
+}
+
+.glow-hover:hover {
+  border-color: var(--primary);
+  background: var(--bg-card-hover);
+}
+
+/* Button Variants: Solid Light Green & Solid Dark */
+.btn-primary {
+  background: var(--primary);
+  color: #000000;
+  font-weight: 700;
+  font-family: var(--font-body);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  gap: 8px;
+}
+.btn-primary:hover {
+  background: var(--primary-light);
+}
+
+.btn-secondary {
+  background: #181818;
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  gap: 8px;
+}
+.btn-secondary:hover {
+  background: #242424;
+  border-color: var(--border-glass-strong);
+}
+
+.btn-ghost {
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  gap: 6px;
+}
+.btn-ghost:hover {
+  color: var(--text-main);
+  background: #1a1a1a;
+}
+
+/* Solid Badges (No Gradients) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #333333;
+}
+.badge-green {
+  background: var(--primary-bg);
+  color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+}
+.badge-cyan {
+  background: #0d2818;
+  color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+}
+.badge-orange {
+  background: #262626;
+  color: #e5e5e5;
+  border: 1px solid #404040;
+}
+.badge-purple {
+  background: #1a1a1a;
+  color: #a3e635;
+  border: 1px solid #365314;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+/* Touch Friendly Utilities */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
